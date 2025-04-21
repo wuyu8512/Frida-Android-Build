@@ -34,12 +34,7 @@ jobs:
                 repo: '${{ secrets.GIT_REPO }}',
                 tag: releaseVersion
               })
-              const {
-                data: { upload_url: uploadUrl }
-              } = releaseResponse;
-              core.setOutput('upload_url', uploadUrl);
             } catch (e) {
-              core.setFailed(e.message);
             }
 
       - uses: actions/checkout@v3
